@@ -1,0 +1,31 @@
+import './TopBar.scss';
+import { Person,Mail } from '@material-ui/icons';
+
+export default function TopBar({setMenuOpen,menuOpen}) {
+    return (
+        <div className={"topBar " + (menuOpen && "active")}>
+            <div className="wrapper">
+                <div className="left">
+                    <a href="#intro" className="logo">Genius.</a>
+                    <div className="itemContainer">
+                        <Person className="icon"/>
+                        <span>+0987654321</span>
+                    </div>
+                    <div className="itemContainer">
+                        <Mail className="icon"/>
+                        <span>amin@hoy.com</span>
+                    </div>
+                </div>
+                
+                <div className="right">
+                    <div className="Hamburger" onClick={()=>setMenuOpen(!menuOpen)} >
+                        <span className="line1"></span>
+                        <span className="line2"></span>
+                        <span className="line3"></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    )
+}
