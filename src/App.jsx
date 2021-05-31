@@ -1,29 +1,24 @@
-import React, { useState } from 'react';
+
 import "./app.scss";
-import TopBar from "./Compenents/topbar/TopBar";
-import Intro from "./Compenents/intro/intro"
-import Portfolio from './Compenents/portfolio/portfolio';
-import Works from './Compenents/works/works';
-import Competences from './Compenents/competences/competences';
-import Contact from './Compenents/contact/contact';
-import Menu from './Compenents/menu/Menu';
+import Main from './Compenents/main/Main';
+import Blog from './Pages/Blog';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+
+
 
 
 
 function App() {
-  const [menuOpen,setMenuOpen] = useState(true)  
+    
   return (
-    <div className="app">
-      <TopBar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-        <div className="Sections">          
-            <Intro/>
-            <Portfolio/>
-            <Works/>
-            <Competences/>
-            <Contact/>
-        </div>
-    </div>
+   
+    <Router>
+      <Route exact path="/" component={Main} />
+      <Route exact path="/blog" component={Blog} />
+  </Router>
+
+  
   );
 }
 
